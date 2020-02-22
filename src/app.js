@@ -8,6 +8,7 @@ const app = express()
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialPath = path.join(__dirname, '../templates/partials')
+const port = process.env.PORT || 8080
 
 app.set('view engine', 'hbs')
 app.set('views',viewsPath)
@@ -66,6 +67,6 @@ app.get('*', (req, res) => {
     res.send('404 Not found vaag')
 })
 
-app.listen(8080, () => {
-    console.log('Server is up on port 8080.')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
