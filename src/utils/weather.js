@@ -10,7 +10,7 @@ const weather = (lat,long,callback) => {
          ) : (response.body.code === 400) ? (
              callback('Invalid Location',undefined)
          ) : (
-            callback(undefined, response.body.daily.data[0].summary + ' It is currently ' + fahrenheitToCelsius(response.body.currently.temperature) + ' degress out. There is a ' + response.body.currently.precipProbability + '% chance of rain.')
+            callback(undefined, response.body.daily.data[0].summary + ' It is currently ' + fahrenheitToCelsius(response.body.currently.temperature).toFixed(2) + ' degress out. There is a ' + response.body.currently.precipProbability + '% chance of rain.')
          )
          })
 }
